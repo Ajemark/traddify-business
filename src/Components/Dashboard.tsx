@@ -2,48 +2,47 @@
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import Icon from './utils/Icon'
-import { KEY, TRADIFYAPITOKEN } from '@/Constants'
 
 
 
 const Dashboard = () => {
 
 
-    const randomText = 'fp1eh3jkly'
+    // const randomText = 'fp1eh3jkly'
 
 
-    const authorize = `https://auth-demo.letsdeel.com/oauth2/authorize?client_id=${KEY}&redirect_uri=${encodeURI('http://localhost:3000')}&scope=contracts%3Aread%20contracts%3Awrite%20organizations%3Aread&response_type=code&state=${randomText}`
+    // const authorize = `https://auth-demo.letsdeel.com/oauth2/authorize?client_id=${KEY}&redirect_uri=${'https://tradify-business.vercel.app'}&scope=contracts%3Aread%20contracts%3Awrite%20organizations%3Aread&response_type=code&state=${randomText}`
 
 
-    useEffect(() => {
-        console.log(authorize)
-        return
-        window.open(authorize, '_blank')
-        // try {
-        //     fetch('https://api.letsdeel.com/rest/v1/candidates', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'Authorization': `Bearer ${TRADIFYAPITOKEN}`,
-        //             'x-client-id': `${KEY}`,
-        //             "Access-Control-Allow-Origin": "no-cors"
-        //         },
-        //         body: JSON.stringify({
-        //             'data': {
-        //                 'id': 'dhzj64mgen',
-        //                 'first_name': 'Taylor',
-        //                 'last_name': 'Swift',
-        //                 'status': 'offer-accepted',
-        //                 'link': 'https://your-ats.com/path/to/candidate/dhzj64mgen',
-        //                 'email': 'taylor@swift.com'
-        //             }
-        //         })
-        //     });
-        // }
-        // catch (e) {
+    // useEffect(() => {
+    //     console.log(authorize)
+    //     return
+    //     window.open(authorize, '_blank')
+    //     // try {
+    //     //     fetch('https://api.letsdeel.com/rest/v1/candidates', {
+    //     //         method: 'POST',
+    //     //         headers: {
+    //     //             'Content-Type': 'application/json',
+    //     //             'Authorization': `Bearer ${TRADIFYAPITOKEN}`,
+    //     //             'x-client-id': `${KEY}`,
+    //     //             "Access-Control-Allow-Origin": "no-cors"
+    //     //         },
+    //     //         body: JSON.stringify({
+    //     //             'data': {
+    //     //                 'id': 'dhzj64mgen',
+    //     //                 'first_name': 'Taylor',
+    //     //                 'last_name': 'Swift',
+    //     //                 'status': 'offer-accepted',
+    //     //                 'link': 'https://your-ats.com/path/to/candidate/dhzj64mgen',
+    //     //                 'email': 'taylor@swift.com'
+    //     //             }
+    //     //         })
+    //     //     });
+    //     // }
+    //     // catch (e) {
 
-        // }
-    }, [])
+    //     // }
+    // }, [])
 
     return (
         <div className=''>
@@ -81,15 +80,15 @@ const Dashboard = () => {
 
                 <div className="mt-[40px] mx-[70px] flex">
                     <div className='border-[#DCDCDC] rounded-[10px] mr-[50px] border-[2px] flex flex-col items-center justify-center w-[275px] py-[15px]'>
-                        <Icon name='fund.svg' size={5} classes='w-[45px] h-[45px] mb-[6px]' />
+                        <Icon name='fund.svg' size={45} classes='w-[45px] h-[45px] mb-[6px]' />
                         <p className='font-[600] text-[20px] ml-[12px]'>Fund Wallet</p>
                     </div>
                     <div className='border-[#DCDCDC] rounded-[10px] mr-[50px] border-[2px] flex flex-col items-center justify-center w-[275px] py-[15px]'>
-                        <Icon name='withdraw.svg' size={5} classes='w-[45px] h-[45px] mb-[6px]' />
+                        <Icon name='withdraw.svg' size={45} classes='w-[45px] h-[45px] mb-[6px]' />
                         <p className='font-[600] text-[20px] ml-[12px]'>Withdraw</p>
                     </div>
                     <div className='border-[#DCDCDC] rounded-[10px] mr-[50px] border-[2px] flex flex-col items-center justify-center w-[275px] py-[15px]'>
-                        <Icon name='paystaff.svg' size={5} classes='w-[45px] h-[45px] mb-[6px]' />
+                        <Icon name='paystaff.svg' size={45} classes='w-[45px] h-[45px] mb-[6px]' />
                         <p className='font-[600] text-[20px] ml-[12px]'>Pay Staff</p>
                     </div>
                 </div>
