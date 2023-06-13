@@ -14,6 +14,7 @@ const Dashboard = () => {
 
     const authorize = `https://auth-demo.letsdeel.com/oauth2/authorize?client_id=${KEY}&redirect_uri=${encodeURI('http://localhost:3000')}&scope=contracts%3Aread%20contracts%3Awrite%20organizations%3Aread&response_type=code&state=${randomText}`
 
+
     useEffect(() => {
         console.log(authorize)
         return
@@ -42,7 +43,6 @@ const Dashboard = () => {
         // catch (e) {
 
         // }
-
     }, [])
 
     return (
