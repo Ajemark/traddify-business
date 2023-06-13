@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-export const Signin = () => {
+const Signin = () => {
     return (
         <div>
             <div className="bg-[url('/homebg.svg')] flex flex-col items-center w-[100vw] ">
@@ -45,3 +45,5 @@ export const Signin = () => {
         </div>
     )
 }
+
+export default Signin
