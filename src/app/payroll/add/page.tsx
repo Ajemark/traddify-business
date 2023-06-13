@@ -4,7 +4,7 @@ import TableCreate from '@/Components/utils/TableCreate'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-const payroll = () => {
+const Payroll = () => {
     const [addRow, setaddRow] = useState(1)
 
     return (
@@ -69,4 +69,4 @@ const payroll = () => {
     )
 }
 
-export default payroll
+export default Payroll
