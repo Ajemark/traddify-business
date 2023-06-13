@@ -17,8 +17,8 @@ export default function SelectOptions({ classes }: any) {
                 onChange={() => setSelectedOption(selectedOption)}
                 name=""
                 id="">
-                {options.map((option) => (
-                    <option value={option.value}>{option.label}</option>
+                {options.map((option, i) => (
+                    <option key={i} value={option.value}>{option.label}</option>
                 ))}
             </select>
         </div>
