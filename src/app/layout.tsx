@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className={inter.className}>
         <nav className='relative'>
           <div className='h-[100vh] flex flex-col items-center text-white w-[368px] bg-[#000000] fixed top-0 left-0'>
             <div className=''>
