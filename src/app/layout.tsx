@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +17,65 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="">
+        <nav className='relative'>
+          <div className='h-[100vh] flex flex-col items-center text-white w-[368px] bg-[#000000] fixed top-0 left-0'>
+            <div className=''>
+              <Link href={'/'}>
+                <Image src={'/logo.svg'} alt='logo' width={20} height={20} className='w-[188px] h-[73px] mt-[63px]' />
+              </Link>
+            </div>
+
+            <div className='flex flex-col my-[76px]'>
+              <Link href={'/'}>
+                <div className='flex items-center'>
+                  <Image src={'/dashicon.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                  <p className='font-[600] ml-[25px] text-[18px]'>Dashboard</p>
+                </div>
+              </Link>
+
+              <div className='flex items-center mt-[35px]'>
+                <Image src={'/transicon.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                <p className='font-[600] ml-[25px] text-[18px]'>Transaction</p>
+              </div>
+
+              <div className='flex items-center mt-[35px]'>
+                <Image src={'/border.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                <p className='font-[600] ml-[25px] text-[18px]'>Cross border payment</p>
+              </div>
+
+              <div className='flex items-center mt-[35px]'>
+                <Image src={'/Grouptrade.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                <p className='font-[600] ml-[25px] text-[18px]'>Trade financing</p>
+              </div>
+
+              <Link href={'/payroll'}>
+                <div className='flex items-center mt-[35px]'>
+                  <Image src={'/payroll.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                  <p className='font-[600] ml-[25px] text-[18px]'>Payroll management</p>
+                </div>
+              </Link>
+
+              <div className='flex items-center mt-[35px]'>
+                <Image src={'/invoice.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                <p className='font-[600] ml-[25px] text-[18px]'>Invoicing</p>
+              </div>
+
+              <div className='flex items-center mt-[35px]'>
+                <Image src={'/paylink.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                <p className='font-[600] ml-[25px] text-[18px]'>Payment link</p>
+              </div>
+
+              <div className='flex items-center mt-[64px]'>
+                <Image src={'/signout.svg'} alt='logo' width={20} height={20} className='w-[20px] h-[20px]' />
+                <p className='font-[600] ml-[25px] text-[18px]'>Signout</p>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        {children}
+      </body>
     </html>
   )
 }
