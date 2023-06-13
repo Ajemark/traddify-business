@@ -4,7 +4,7 @@ import Table from '@/Components/utils/Table'
 import Link from 'next/link'
 import React from 'react'
 
-const payroll = () => {
+const Payroll = () => {
 
     return (
         <div>
@@ -80,4 +80,4 @@ const payroll = () => {
     )
 }
 
-export default payroll
+export default Payroll
