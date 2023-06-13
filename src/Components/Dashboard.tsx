@@ -44,11 +44,11 @@ const Dashboard = () => {
                         <Icon name='fund.svg' size={5} classes='w-[45px] h-[45px] mb-[6px]' />
                         <p className='font-[600] text-[20px]'>Fund Wallet</p>
                     </div>
-                    <div className='border-[#DCDCDC] rounded-[10px] mr-[50px] border-[2px] flex flex-col items-center justify-center w-[275px] '>
+                    <div className='border-[#DCDCDC] rounded-[10px] mr-[50px] border-[2px] flex flex-col items-center justify-center w-[275px] py-[15px]'>
                         <Icon name='withdraw.svg' size={5} classes='w-[45px] h-[45px] mb-[6px]' />
                         <p className='font-[600] text-[20px]'>Withdraw</p>
                     </div>
-                    <div className='border-[#DCDCDC] rounded-[10px] mr-[50px] border-[2px] flex flex-col items-center justify-center w-[275px]'>
+                    <div className='border-[#DCDCDC] rounded-[10px] mr-[50px] border-[2px] flex flex-col items-center justify-center w-[275px] py-[15px]'>
                         <Icon name='paystaff.svg' size={5} classes='w-[45px] h-[45px] mb-[6px]' />
                         <p className='font-[600] text-[20px]'>Pay Staff</p>
                     </div>
