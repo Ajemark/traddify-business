@@ -3,7 +3,7 @@ import Icon from '@/Components/utils/Icon'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-const page = () => {
+const Page = () => {
     const [openModal, setOpenModal] = useState(false)
 
     return (
@@ -132,4 +132,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

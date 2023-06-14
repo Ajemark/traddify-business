@@ -1,10 +1,21 @@
-import Image from 'next/image'
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import Icon from './utils/Icon'
+import { KEY } from '@/Constants'
 
 
 
 const Dashboard = () => {
+
+
+    const link = 'https://tradify-business.vercel.app'
+
+    const auth = `https://auth-demo.letsdeel.com/oauth2/authorize?client_id=${KEY}&redirect_uri=${link}&scope=contracts%3Aread%20contracts%3Awrite%20organizations%3Aread&response_type=code&state=fp1eh3jkly`
+
+    useEffect(() => {
+        // window.open(auth, '_blank')
+    }, [])
+
     return (
         <div className=''>
             {/* <Head></Head> */}
