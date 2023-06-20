@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import { GetServerSideProps } from 'next';
 
 
-const Dashboard = ({id}) => {
+const Dashboard = () => {
     const params = useParams();
 
     // const [query, setquery] = useState('')
