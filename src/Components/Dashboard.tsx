@@ -1,26 +1,26 @@
 'use client'
 import React, { useEffect } from 'react'
 import Icon from './utils/Icon'
-import { KEY } from '@/Constants'
+import { useParams } from 'next/navigation';
+import { GetServerSideProps } from 'next';
 
 
+const Dashboard = ({id}) => {
+    const params = useParams();
 
-const Dashboard = () => {
+    // const [query, setquery] = useState('')
 
+    console.log(params)
 
-    const link = 'https://tradify-business.vercel.app'
-
-    const auth = `https://auth-demo.letsdeel.com/oauth2/authorize?client_id=${KEY}&redirect_uri=${link}&scope=contracts%3Aread%20contracts%3Awrite%20organizations%3Aread&response_type=code&state=fp1eh3jkly`
-
-    useEffect(() => {
-        // window.open(auth, '_blank')
-    }, [])
+    // useEffect(() => {
+    //     if (!router.isReady) return;
+    //     console.log(router.query)
+    //     const query = router.query;
+    // }, [router.isReady, router.query]);
 
     return (
         <div className=''>
             {/* <Head></Head> */}
-
-
             <main className='ml-[370px] mb-[100px]'>
 
                 <div className='h-[132px] flex items-center px-[70px] border-b-[3px] border-[#F0EEEE]'>
@@ -79,3 +79,14 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    var id = context.query["id"];
+    console.log(context.query)
+    return {
+        props: {
+            id
+        },
+    };
+};
+
