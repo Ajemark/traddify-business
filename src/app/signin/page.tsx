@@ -44,7 +44,7 @@ const Signin = () => {
         try {
             const { data } = await axios.post('api/auth/login', formData)
             setClient(data)
-            location.href = location.origin + "/?id=" + Client
+            location.href = location.origin + "/?id=" + data
         } catch (e) {
             const error = e as AxiosError
             setMessage({

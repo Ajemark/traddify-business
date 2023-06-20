@@ -32,7 +32,6 @@ export default function RootLayout({
       const { client, error } = await getClient()
       if (error) {
         if (location.href != location.origin + '/register' && location.href != location.origin + '/signin') {
-          console.log('client')
           location.href = location.origin + '/signin'
           return
         }

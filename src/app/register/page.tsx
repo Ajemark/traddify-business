@@ -54,7 +54,7 @@ const Register = () => {
         try {
             const { data } = await axios.post('api/client', formData)
             console.log(data)
-            // location.href = location.origin
+            location.href = location.origin + '/signin'
         } catch (e) {
             const error = e as AxiosError
             alert(error.message)
