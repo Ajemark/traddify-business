@@ -8,11 +8,6 @@ import axios, { AxiosError } from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  icons: {
-    icon: '/logo.png',
-  },
-};
 
 
 export default function RootLayout({
@@ -47,6 +42,9 @@ export default function RootLayout({
 
   if (loading)
     return <html lang="en">
+      <head>
+        <link rel="icon" href="logo.svg" />
+      </head>
       <body className={inter.className}>
         <div>
           <div className="bg-[url('/homebg.svg')] flex flex-col items-center w-[100vw] h-[100vh]">
