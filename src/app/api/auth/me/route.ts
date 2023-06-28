@@ -6,10 +6,17 @@ export async function GET() {
   const cookieStore = cookies()
   const token = cookieStore.get("OutsiteJWT")
 
+
   if (!token) {
     return new NextResponse("Unauthorized", {
       status: 401,
     })
+
+    // see CountQueuing
+    // see passwrd
+    // text color
+    // logo 
+
   }
   const { value } = token
   const secret = process.env.JWT_SECRET || ""

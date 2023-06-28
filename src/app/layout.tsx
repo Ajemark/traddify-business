@@ -8,7 +8,11 @@ import axios, { AxiosError } from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 
-
+export const metadata = {
+  icons: {
+    icon: '/logo.png',
+  },
+};
 
 
 export default function RootLayout({

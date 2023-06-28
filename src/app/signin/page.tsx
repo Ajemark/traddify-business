@@ -96,7 +96,7 @@ const Signin = () => {
                             </button>
                             <label className='font-[500] mr-[10px] text-[20px]'>Don`t have an account?
                                 <Link href={'/register'}>
-                                    <span className='text-[#2400FF]'>Create an account here</span>
+                                    <span className='ml-[10px] text-[#2400FF]'>Create an account here</span>
                                 </Link>
                             </label>
                         </div>
