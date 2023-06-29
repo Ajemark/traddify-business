@@ -1,4 +1,5 @@
 "use client"
+import Icon from '@/Components/utils/Icon'
 import axios, { AxiosError } from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,6 +14,7 @@ const FormReducer = (state: any, event: any) => {
 
 const Signin = () => {
 
+    const [ShowPass, setShowPass] = useState(false)
     const [Client, setClient] = useState()
     const [Message, setMessage] = useState({
         text: "",
@@ -83,7 +85,23 @@ const Signin = () => {
 
                         <div className='flex mt-[16px]  flex-col'>
                             <label className='font-[400] text-[20px]'>Password</label>
-                            <input type="password" onChange={setFormData} name='password' className='outline-none border border-#C4C4C4 rounded-[5px] text-[#C4C4C4] py-[6px] px-[39px] h-[42px]' placeholder='Password' />
+                            {ShowPass ? (
+                                <div className="flex border border-#C4C4C4 items-center rounded-[5px]  py-[6px] px-[39px] justify-between h-[42px]">
+                                    <input type="text" name='password' onChange={setFormData} className='outline-none flex-1' value={formData?.password} placeholder='Password' />
+                                    <div onClick={() => setShowPass(!ShowPass)}>
+                                        <Icon name='eye-slash.svg' classes='' size={14} />
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex border border-#C4C4C4 items-center rounded-[5px]  py-[6px] px-[39px] justify-between h-[42px]">
+                                    <input type="password" name='password' onChange={setFormData} className='outline-none flex-1' value={formData?.password} placeholder='Password' />
+                                    <div onClick={() => setShowPass(!ShowPass)}>
+                                        <Icon name='eye-slash.svg' classes='' size={14} />
+                                    </div>
+                                </div>
+                            )}
+
+
                         </div>
 
                         <div className='flex mt-[21px] justify-end'>

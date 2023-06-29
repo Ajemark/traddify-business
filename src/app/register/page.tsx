@@ -1,9 +1,12 @@
 "use client"
 import Icon from '@/Components/utils/Icon'
+import CountrySelector from '@/Components/utils/Selector'
+import { COUNTRIES } from '@/database/countries'
 import axios, { AxiosError } from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useReducer, useState } from 'react'
+
 
 const FormReducer = (state: any, event: any) => {
 
@@ -14,7 +17,11 @@ const FormReducer = (state: any, event: any) => {
 }
 
 const Register = () => {
-    const [openModal, setOpenModal] = useState(true)
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [country, setCountry] = useState('NG');
+
+    const [openModal, setOpenModal] = useState(false)
     const [ShowPass, setShowPass] = useState(false)
     const [ShowPassAgain, setShowPassAgain] = useState(false)
 
@@ -30,33 +37,32 @@ const Register = () => {
                 text: "Enter All Fields",
                 type: "red"
             })
-            return
+            return false
         }
         else if (field == 'false') {
             setMessage({
                 text: "Enter All Fields",
                 type: "red"
             })
-            return
+            return false
         }
+        return true
     }
 
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
-
         setMessage({
             text: "",
             type: ""
         })
 
-        checkData(formData.name)
-        checkData(formData.email)
-        checkData(formData.phoneNumber)
-        checkData(formData.country)
-        checkData(formData.password)
-        checkData(formData.passwordAgain)
-        checkData(formData.agree)
+        if (!checkData(formData.name)) return
+        if (!checkData(formData.email)) return
+        if (!checkData(formData.phoneNumber)) return
+        if (!checkData(formData.password)) return
+        if (!checkData(formData.passwordAgain)) return
+        if (!checkData(formData.agree)) return
 
         if (!formData.password || (formData.password != formData.passwordAgain)) {
             if (!formData.password) {
@@ -72,9 +78,15 @@ const Register = () => {
             })
             return
         }
+        if (country == undefined) return setMessage({
+            text: "Enter All Fields",
+            type: "red"
+        })
+        const formd = formData
+        formd['country'] = COUNTRIES.find(option => option.value === country)?.title
 
         try {
-            const { data } = await axios.post('api/client', formData)
+            const { data } = await axios.post('api/client', formd)
             console.log(data)
             setOpenModal(true)
         } catch (e) {
@@ -121,12 +133,17 @@ const Register = () => {
 
                         <div className='flex mt-[16px]  flex-col'>
                             <label className='font-[400] text-[20px]'>Country</label>
-                            <input type="text" name='country' onChange={setFormData} className='outline-none border border-#C4C4C4 rounded-[5px]  py-[6px] px-[39px] h-[42px]' placeholder='Country' />
+                            <CountrySelector
+                                id={'countries'}
+                                open={isOpen}
+                                onToggle={() => setIsOpen(!isOpen)}
+                                onChange={(val: any) => setCountry(val)}
+                                selectedValue={COUNTRIES.find(option => option.value === country)}
+                            />
                         </div>
 
                         <div className='flex mt-[16px]  flex-col'>
                             <label className='font-[400] text-[20px]'>Password</label>
-
                             {ShowPass ? (
                                 <div className="flex border border-#C4C4C4 items-center rounded-[5px]  py-[6px] px-[39px] justify-between h-[42px]">
                                     <input type="text" name='password' onChange={setFormData} className='outline-none flex-1' value={formData?.password} placeholder='Password' />
