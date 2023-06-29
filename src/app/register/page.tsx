@@ -17,10 +17,8 @@ const FormReducer = (state: any, event: any) => {
 }
 
 const Register = () => {
-
     const [isOpen, setIsOpen] = useState(false);
-    const [country, setCountry] = useState('NG');
-
+    const [country, setCountry] = useState('US');
     const [openModal, setOpenModal] = useState(false)
     const [ShowPass, setShowPass] = useState(false)
     const [ShowPassAgain, setShowPassAgain] = useState(false)
