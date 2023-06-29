@@ -14,7 +14,7 @@ const FormReducer = (state: any, event: any) => {
 }
 
 const Register = () => {
-    const [openModal, setOpenModal] = useState(true)
+    const [openModal, setOpenModal] = useState(false)
     const [ShowPass, setShowPass] = useState(false)
     const [ShowPassAgain, setShowPassAgain] = useState(false)
 
