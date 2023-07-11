@@ -1,6 +1,7 @@
-import { verify } from 'jsonwebtoken'
+import { verify, decode } from 'jsonwebtoken'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
+import Client from '../../../../../model/client'
 
 export async function GET() {
   const cookieStore = cookies()
@@ -21,9 +22,11 @@ export async function GET() {
   const { value } = token
   const secret = process.env.JWT_SECRET || ""
 
+  const client = await Client.find({ "email": decode(value)?.email })
+
   try {
     verify(value, secret)
-    return new NextResponse("Singned in", {
+    return new NextResponse(JSON.stringify(client[0]), {
       status: 200,
     })
 

@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     maxAge: 60 * 60 * 24 * 15,
     path: '/'
   })
-  return new NextResponse(client[0].id, {
+  return new NextResponse(JSON.stringify(client[0]), {
     status: 200,
     headers: { 'Set-Cookie': serialized }
   })

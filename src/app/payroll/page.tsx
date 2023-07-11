@@ -9,25 +9,6 @@ const Payroll = () => {
     return (
         <main className='ml-[370px] mb-[100px]'>
 
-            <div className='h-[132px] flex items-center px-[70px] border-b-[3px] border-[#F0EEEE]'>
-                <p className="text-[#000000] font-[600] text-[24px] flex-1">
-                    PAYROLL MANAGEMENT
-                </p>
-                <div className='flex'>
-                    <p className="text-[#000000] border-r-[3px] pr-[20px] border-[#8E8E8E] font-[500] text-[20px] flex-1">
-                        <em>Welcome</em>
-                    </p>
-
-                    <div className='flex'>
-                        <Icon name='profile.svg' size={20} classes='mx-[12px]' />
-                        <p className="text-[#000000] font-[500] text-[20px] flex-1">
-                            Johnson Ltd
-                        </p>
-                        <Icon name='caret-down.svg' size={20} classes='ml-[12px]' />
-                    </div>
-                </div>
-            </div>
-
             <div className="px-[70px] ">
 
                 <div className='flex justify-between items-center border-b-[1px] border-[#CECECE] mb-[40px] py-[37px]'>

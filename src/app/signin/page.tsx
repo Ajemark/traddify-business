@@ -4,6 +4,8 @@ import axios, { AxiosError } from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useReducer, useState } from 'react'
+import Client from '../../../model/client'
+import { userContext } from '../../../context/contextApi'
 
 const FormReducer = (state: any, event: any) => {
     return {
@@ -11,6 +13,8 @@ const FormReducer = (state: any, event: any) => {
         [event.target.name]: event.target.value
     }
 }
+
+export let userClient = {}
 
 const Signin = () => {
 
@@ -28,8 +32,9 @@ const Signin = () => {
                 text: "Enter All Fields",
                 type: "red"
             })
-            return
+            return false
         }
+        return true
     }
 
     const handleSubmit = async (e: any) => {
@@ -39,23 +44,23 @@ const Signin = () => {
             type: ""
         })
 
-        checkData(formData.email)
-        checkData(formData.password)
+        if (!checkData(formData.email)) return
+        if (!checkData(formData.password)) return
 
-        console.log(location.origin + "/?id=" + Client)
         try {
             const { data } = await axios.post('api/auth/login', formData)
             setClient(data)
-            location.href = location.origin + "/?id=" + data
+            userClient = data
+            location.href = location.origin
         } catch (e) {
             const error = e as AxiosError
+            console.log(e)
             setMessage({
                 text: "Unauthorized, Please Try again",
                 type: "red"
             })
         }
     }
-
 
     return (
         <div>

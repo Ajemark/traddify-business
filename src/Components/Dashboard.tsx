@@ -1,46 +1,15 @@
 'use client'
 import React, { useEffect } from 'react'
 import Icon from './utils/Icon'
-import { useParams } from 'next/navigation';
-import { GetServerSideProps } from 'next';
-
+import { userContext } from '../../context/contextApi'
 
 const Dashboard = () => {
-    const params = useParams();
-
-    // const [query, setquery] = useState('')
-
-    console.log(params)
-
-    // useEffect(() => {
-    //     if (!router.isReady) return;
-    //     console.log(router.query)
-    //     const query = router.query;
-    // }, [router.isReady, router.query]);
+    const { client } = userContext()
 
     return (
         <div className=''>
             {/* <Head></Head> */}
             <main className='ml-[370px] mb-[100px]'>
-
-                <div className='h-[132px] flex items-center px-[70px] border-b-[3px] border-[#F0EEEE]'>
-                    <p className="text-[#000000] font-[600] text-[24px] flex-1">
-                        DASHBOARD
-                    </p>
-                    <div className='flex'>
-                        <p className="text-[#000000] border-r-[3px] pr-[20px] border-[#8E8E8E] font-[500] text-[20px] flex-1">
-                            <em>Welcome</em>
-                        </p>
-
-                        <div className='flex'>
-                            <Icon name='profile.svg' size={20} classes='mx-[12px]' />
-                            <p className="text-[#000000] font-[500] text-[20px] flex-1">
-                                Johnson Ltd
-                            </p>
-                            <Icon name='caret-down.svg' size={20} classes='ml-[12px]' />
-                        </div>
-                    </div>
-                </div>
 
                 <div className='px-[42px] mt-[32px] text-white py-[24px] mx-[70px] bg-[#8D00CA] border-2 border-[#8D00CA] rounded-[10px]'>
                     <div className='flex mb-[14px]'>
@@ -79,14 +48,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    var id = context.query["id"];
-    console.log(context.query)
-    return {
-        props: {
-            id
-        },
-    };
-};
 
