@@ -1,0 +1,32 @@
+<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="16" height="15" fill="#F5F5F5"/>
+<g id="TRANSACTION HISTORY DROPDOWN" clip-path="url(#clip0_392_6)">
+<rect width="1440" height="1237" transform="translate(-626 -353)" fill="white"/>
+<g id="Recent Transactions">
+<rect x="-188" y="-191" width="923" height="932" rx="9" fill="white"/>
+<g id="Group 31288">
+<g id="Group 31194">
+<g id="Group 31195">
+<g id="Group 81">
+<g id="Group 76">
+<g id="Group 70">
+<g id="Frame 8">
+<rect x="-19.5" y="-15.7227" width="586" height="41" rx="9.5" fill="white"/>
+<rect x="-19.5" y="-15.7227" width="586" height="41" rx="9.5" stroke="#C4C4C4"/>
+</g>
+</g>
+<path id="Vector" d="M3 13.7283V2.78027C2.99993 2.5476 3.07715 2.32149 3.21952 2.13746C3.36189 1.95343 3.56136 1.8219 3.7866 1.76353C4.01183 1.70516 4.25008 1.72326 4.46391 1.81498C4.67774 1.9067 4.85506 2.06685 4.968 2.27027L11.032 13.1863C11.1449 13.3897 11.3223 13.5498 11.5361 13.6416C11.7499 13.7333 11.9882 13.7514 12.2134 13.693C12.4386 13.6346 12.6381 13.5031 12.7805 13.3191C12.9229 13.1351 13.0001 12.9089 13 12.6763V1.72827M1 5.72827H15M1 9.72827H15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<rect x="-188" y="-191" width="923" height="932" rx="9" stroke="#DCDCDC" stroke-width="2"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_392_6">
+<rect width="1440" height="1237" fill="white" transform="translate(-626 -353)"/>
+</clipPath>
+</defs>
+</svg>
