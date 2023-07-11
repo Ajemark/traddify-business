@@ -12,13 +12,14 @@ const UserContext = createContext();
 // components that needs the state in this context
 function UserProvider({ children }) {
 
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(true)
   const [client, setClient] = useState(null)
 
   useEffect(() => {
     (async () => {
       const { client, error } = await getClient()
-      setClient(client.data)
+      if (client)
+        setClient(client.data)
       setError(error)
     })()
   }, [])
