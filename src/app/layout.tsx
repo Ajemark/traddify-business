@@ -182,21 +182,24 @@ function Layout({ children }: { children: React.ReactNode }) {
             </nav>
 
             <main>
-              <div className='h-[132px] ml-[370px] flex items-center px-[70px] border-b-[3px] border-[#F0EEEE]'>
-                <p className="text-[#000000] font-[600] uppercase text-[24px] flex-1">
-                  {activePageText || 'DASHBOARD'}
-                </p>
-                <div className='flex'>
-                  <p className="text-[#000000] border-r-[3px] pr-[20px] border-[#8E8E8E] font-[500] text-[20px] flex-1">
-                    <em>Welcome</em>
+              <div className={` ${showNav ? 'flex' : 'hidden'} `}>
+                <div className='h-[132px] ml-[370px] flex w-full items-center px-[70px] border-b-[3px] border-[#F0EEEE]'>
+                  <p className="text-[#000000] font-[600] uppercase text-[24px] flex-1">
+                    {activePageText || 'DASHBOARD'}
                   </p>
-
                   <div className='flex'>
-                    <Icon name='profile.svg' size={20} classes='mx-[12px]' />
-                    <p className="text-[#000000] font-[500] text-[20px] flex-1">
-                      {client?.name || 'Johnson Ltd'}
+                    <p className="text-[#000000] border-r-[3px] pr-[20px] border-[#8E8E8E] font-[500] text-[20px] flex-1">
+                      <em>Welcome</em>
                     </p>
-                    <Icon name='caret-down.svg' size={20} classes='ml-[12px]' />
+
+
+                    <div className='flex'>
+                      <Icon name='profile.svg' size={20} classes='mx-[12px]' />
+                      <p className="text-[#000000] font-[500] text-[20px] flex-1">
+                        {client?.name || 'Johnson Ltd'}
+                      </p>
+                      <Icon name='caret-down.svg' size={20} classes='ml-[12px]' />
+                    </div>
                   </div>
                 </div>
               </div>

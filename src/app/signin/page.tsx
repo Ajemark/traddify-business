@@ -14,12 +14,11 @@ const FormReducer = (state: any, event: any) => {
     }
 }
 
-export let userClient = {}
-
 const Signin = () => {
 
+    const { client, setClient } = userContext()
+
     const [ShowPass, setShowPass] = useState(false)
-    const [Client, setClient] = useState()
     const [Message, setMessage] = useState({
         text: "",
         type: ""
@@ -50,8 +49,6 @@ const Signin = () => {
         try {
             const { data } = await axios.post('api/auth/login', formData)
             setClient(data)
-            userClient = data
-            location.href = location.origin
         } catch (e) {
             const error = e as AxiosError
             console.log(e)
