@@ -49,6 +49,7 @@ const Signin = () => {
         try {
             const { data } = await axios.post('api/auth/login', formData)
             setClient(data)
+            location.href = location.origin
         } catch (e) {
             const error = e as AxiosError
             console.log(e)
@@ -61,7 +62,7 @@ const Signin = () => {
 
     return (
         <div>
-            <div className="bg-[url('/homebg.svg')] flex flex-col items-center w-[100vw] ">
+            <div className="bg-[url('/homebg.svg')] h-[100vh] flex flex-col items-center w-[100vw] ">
 
                 <div className="bg-black bg-opacity-[0.1] w-[100%] h-[102px]">
                     <Image src={'/logo.svg'} alt='logo' width={20} height={20} className='w-[188px] h-[73px]' />

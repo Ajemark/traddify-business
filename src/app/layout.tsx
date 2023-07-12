@@ -69,7 +69,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     } else {
       setShowNav(true)
     }
-  }, [children])
+  }, [children, client])
 
   useEffect(() => {
     (async () => {
